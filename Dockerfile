@@ -4,10 +4,9 @@ RUN apt-get update
 RUN apt-get install git redis-server imagemagick build-essential
 RUN service redis-server start
 
-RUN cd /
+WORKDIR /
 RUN git clone -b v0.7.x https://github.com/NodeBB/NodeBB.git nodebb
-RUN cd nodebb
-RUN npm install --production
+RUN cd nodebb && npm install --production
 
 EXPOSE 4567
 WORKDIR /nodebb
