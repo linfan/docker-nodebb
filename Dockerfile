@@ -9,5 +9,6 @@ RUN git clone -b v0.7.x https://github.com/NodeBB/NodeBB.git nodebb
 RUN cd nodebb
 RUN npm install --production
 
+EXPOSE 4567
 WORKDIR /nodebb
 CMD npm start
